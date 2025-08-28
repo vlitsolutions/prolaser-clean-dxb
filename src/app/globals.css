@@ -11,12 +11,18 @@
   }
 }
 
-/* Custom styles for hero section */
+/* Custom styles for hero section - responsive backgrounds */
 .hero-bg {
-  background-image: url('/images/hero-bg.webp');
+  background-image: url('/images/hero-bg-mobile.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+  .hero-bg {
+    background-image: url('/images/hero-bg-desktop.webp');
+  }
 }
 
 /* Smooth scroll behavior */

@@ -163,7 +163,15 @@ export default function RootLayout({
         <link
           rel="preload"
           as="image"
-          href="/images/hero-bg.webp"
+          href="/images/hero-bg-mobile.webp"
+          media="(max-width: 767px)"
+          fetchPriority="high"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/hero-bg-desktop.webp"
+          media="(min-width: 768px)"
           fetchPriority="high"
         />
       </head>

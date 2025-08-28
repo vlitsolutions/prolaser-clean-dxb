@@ -38,11 +38,25 @@ export default function HeroVideo() {
 
   return (
     <>
-      {/* Static background image always visible for LCP */}
+      {/* Static background image always visible for LCP - responsive */}
       <div 
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/images/hero-bg.webp)' }}
+        style={{ 
+          backgroundImage: 'url(/images/hero-bg-mobile.webp)',
+          '@media (min-width: 768px)': {
+            backgroundImage: 'url(/images/hero-bg-desktop.webp)'
+          }
+        }}
       />
+      
+      {/* CSS media query for responsive background */}
+      <style jsx>{`
+        @media (min-width: 768px) {
+          div {
+            background-image: url(/images/hero-bg-desktop.webp) !important;
+          }
+        }
+      `}</style>
       
       {/* Video loads only after page load and when idle */}
       <video
@@ -53,7 +67,7 @@ export default function HeroVideo() {
         playsInline
         preload="none"
         className="absolute inset-0 w-full h-full object-cover"
-        poster="/images/hero-bg.webp"
+        poster="/images/hero-bg-mobile.webp"
         style={{
           opacity: videoReady ? 1 : 0,
           transition: 'opacity 1.5s ease-in-out',
