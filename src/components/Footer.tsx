@@ -32,7 +32,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center mb-6">
               <Image
-                src="/images/logo.jpeg"
+                src="/images/logo.webp"
                 alt="PROLASER CLEAN DXB"
                 width={60}
                 height={60}
@@ -53,13 +53,13 @@ export default function Footer() {
             
             {/* Social Media Links */}
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">
+              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors" aria-label="Follow us on Facebook">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">
+              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors" aria-label="Follow us on Instagram">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">
+              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors" aria-label="Connect with us on LinkedIn">
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>

@@ -10,7 +10,7 @@ const HeroVideo = dynamic(() => import('./HeroVideo'), {
     // Show static background while video component loads
     <div 
       className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: 'url(/images/hero-bg.jpg)' }}
+      style={{ backgroundImage: 'url(/images/hero-bg.webp)' }}
     />
   ),
 });

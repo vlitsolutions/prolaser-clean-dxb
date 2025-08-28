@@ -99,6 +99,9 @@ export default function Navigation() {
                 'lg:hidden p-2 transition-colors',
                 isScrolled ? 'text-gray-700 hover:text-primary-600' : 'text-white hover:text-blue-200'
               )}
+              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-menu"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -107,7 +110,7 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden bg-white/95 backdrop-blur-md rounded-lg mt-2 p-4 shadow-lg">
+          <div id="mobile-menu" className="lg:hidden bg-white/95 backdrop-blur-md rounded-lg mt-2 p-4 shadow-lg">
             <div className="space-y-4">
               {navLinks.map((link) => (
                 <a

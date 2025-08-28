@@ -126,7 +126,7 @@ export default function LogoAnimation() {
       }}
     >
       <Image
-        src="/images/logo.jpeg"
+        src="/images/logo.webp"
         alt="PROLASER CLEAN DXB"
         width={200}
         height={200}

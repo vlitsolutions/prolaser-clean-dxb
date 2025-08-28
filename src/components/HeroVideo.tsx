@@ -41,7 +41,7 @@ export default function HeroVideo() {
       {/* Static background image always visible for LCP */}
       <div 
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/images/hero-bg.jpg)' }}
+        style={{ backgroundImage: 'url(/images/hero-bg.webp)' }}
       />
       
       {/* Video loads only after page load and when idle */}
@@ -53,7 +53,7 @@ export default function HeroVideo() {
         playsInline
         preload="none"
         className="absolute inset-0 w-full h-full object-cover"
-        poster="/images/hero-bg.jpg"
+        poster="/images/hero-bg.webp"
         style={{
           opacity: videoReady ? 1 : 0,
           transition: 'opacity 1.5s ease-in-out',

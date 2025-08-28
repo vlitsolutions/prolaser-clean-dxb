@@ -13,8 +13,8 @@ export default function CaseStudies() {
       challenge: "Rust and oil removal on car parts before repainting.",
       solution: "Laser cleaning provided a fast, uniform cleaning process.",
       result: "Removed rust, oil and dirt and reduced material waste.",
-      beforeImage: "/images/examples/9. Metal Car Parts_before.jpg",
-      afterImage: "/images/examples/9. Metal Car Parts_after.jpg"
+      beforeImage: "/images/examples/metal-car-parts-before.webp",
+      afterImage: "/images/examples/metal-car-parts-after.webp"
     },
     {
       id: 2,
@@ -22,8 +22,8 @@ export default function CaseStudies() {
       challenge: "Dirt and grime removal on travertine and marble used for outdoor areas.",
       solution: "Laser cleaning provided a fast, uniform cleaning process.",
       result: "Travertine, in particular, has a porous and textured surface, but laser cleaning accessed these hard-to-reach areas, ensuring a thorough clean.",
-      beforeImage: "/images/examples/1. Travertin_before.jpg",
-      afterImage: "/images/examples/1. Travertin_after.jpg"
+      beforeImage: "/images/examples/travertine-before.webp",
+      afterImage: "/images/examples/travertine-after.webp"
     },
     {
       id: 3,
@@ -31,8 +31,8 @@ export default function CaseStudies() {
       challenge: "Removing hard residue from floor tiles after renovation. The client tried for more than 8 years to find an effective cleaning solution for the tiles.",
       solution: "Laser cleaning allows for spot cleaning of hard residue on the tiles.",
       result: "The laser removes residue without abrasive tools, protecting the surface of the tiles from scratches or wear.",
-      beforeImage: "/images/examples/6. Ceramic Tiles_before.jpg",
-      afterImage: "/images/examples/6. Ceramic Tiles_after.jpg"
+      beforeImage: "/images/examples/ceramic-tiles-before.webp",
+      afterImage: "/images/examples/ceramic-tiles-after.webp"
     }
   ];
 
@@ -75,7 +75,7 @@ export default function CaseStudies() {
 
         {/* Dynamic Labels based on slider position */}
         <div 
-          className="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 text-sm font-medium rounded shadow-lg z-10 transition-opacity duration-200"
+          className="absolute top-4 left-4 bg-green-700 text-white px-3 py-1 text-sm font-medium rounded shadow-lg z-10 transition-opacity duration-200"
           style={{
             opacity: sliderPosition > 25 ? 1 : 0.3
           }}
@@ -83,7 +83,7 @@ export default function CaseStudies() {
           AFTER
         </div>
         <div 
-          className="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 text-sm font-medium rounded shadow-lg z-10 transition-opacity duration-200"
+          className="absolute top-4 right-4 bg-red-700 text-white px-3 py-1 text-sm font-medium rounded shadow-lg z-10 transition-opacity duration-200"
           style={{
             opacity: sliderPosition < 75 ? 1 : 0.3
           }}
@@ -104,6 +104,11 @@ export default function CaseStudies() {
               background: 'transparent',
               outline: 'none'
             }}
+            aria-label="Before and after comparison slider"
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={sliderPosition}
+            aria-valuetext={`${sliderPosition}% between before and after images`}
           />
           
           {/* Slider Line */}
@@ -159,21 +164,21 @@ export default function CaseStudies() {
                 
                 <div className="space-y-4">
                   <div>
-                    <h4 className="font_7 text-red-600 mb-2">Challenge:</h4>
+                    <h4 className="font_7 text-red-700 mb-2">Challenge:</h4>
                     <p className="font_8 text-gray-600 leading-relaxed">
                       {study.challenge}
                     </p>
                   </div>
                   
                   <div>
-                    <h4 className="font_7 text-blue-600 mb-2">Solution:</h4>
+                    <h4 className="font_7 text-blue-700 mb-2">Solution:</h4>
                     <p className="font_8 text-gray-600 leading-relaxed">
                       {study.solution}
                     </p>
                   </div>
                   
                   <div>
-                    <h4 className="font_7 text-green-600 mb-2">Result:</h4>
+                    <h4 className="font_7 text-green-700 mb-2">Result:</h4>
                     <p className="font_8 text-gray-600 leading-relaxed">
                       {study.result}
                     </p>

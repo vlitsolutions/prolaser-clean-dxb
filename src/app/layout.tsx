@@ -51,9 +51,9 @@ export const metadata: Metadata = {
   category: "Industrial Services",
   classification: "Business",
   icons: {
-    icon: "/images/logo.jpeg",
-    shortcut: "/images/logo.jpeg",
-    apple: "/images/logo.jpeg",
+    icon: "/images/logo.webp",
+    shortcut: "/images/logo.webp",
+    apple: "/images/logo.webp",
   },
   robots: {
     index: true,
@@ -75,13 +75,13 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/logo.jpeg",
+        url: "/images/logo.webp",
         width: 200,
         height: 200,
         alt: "PROLASER CLEAN DXB - Laser Cleaning Services Logo",
       },
       {
-        url: "/images/hero-bg.jpg",
+        url: "/images/hero-bg.webp",
         width: 1200,
         height: 630,
         alt: "PROLASER CLEAN DXB - Advanced Laser Cleaning Technology",
@@ -95,7 +95,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "PROLASER CLEAN DXB - Laser Cleaning Services",
     description: "Eco-friendly laser cleaning services in Dubai. Chemical-free, precise surface cleaning for all industries.",
-    images: ["/images/hero-bg.jpg"],
+    images: ["/images/hero-bg.webp"],
     creator: "@prolaserdxb",
     site: "@prolaserdxb",
   },
@@ -103,19 +103,19 @@ export const metadata: Metadata = {
     // WhatsApp specific metadata
     "whatsapp:title": "PROLASER CLEAN DXB - Laser Cleaning Services",
     "whatsapp:description": "🔥 Advanced Laser Cleaning in Dubai! Eco-friendly, chemical-free surface cleaning for all industries. Get your FREE quote today! 📞 +971 58 275 1122",
-    "whatsapp:image": "https://prolaserdxb.com/images/hero-bg.jpg",
+    "whatsapp:image": "https://prolaserdxb.com/images/hero-bg.webp",
     "whatsapp:url": "https://prolaserdxb.com",
     
     // Telegram specific metadata
     "telegram:title": "PROLASER CLEAN DXB - Revolutionary Laser Cleaning",
     "telegram:description": "🚀 Revolutionizing Surface Cleaning with Laser Technology in Dubai, UAE\n\n✅ Eco-friendly & Chemical-free\n✅ Manufacturing, Aerospace, Automotive\n✅ HoReCa & Residential Services\n\n📞 Contact: +971 58 275 1122\n📧 contact@prolaserdxb.com",
-    "telegram:image": "https://prolaserdxb.com/images/hero-bg.jpg",
+    "telegram:image": "https://prolaserdxb.com/images/hero-bg.webp",
     "telegram:channel": "@prolaserdxb",
     
     // Generic messaging apps fallback
     "mobile-web:app-title": "PROLASER CLEAN DXB",
     "mobile-web:app-description": "Professional laser cleaning services in Dubai. Eco-friendly, precise, efficient.",
-    "mobile-web:app-image": "https://prolaserdxb.com/images/logo.jpeg",
+    "mobile-web:app-image": "https://prolaserdxb.com/images/logo.webp",
     
     // Additional rich snippet data
     "business:contact_data:phone_number": "+971582751122",
@@ -159,6 +159,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${spinnaker.variable} ${futura.variable}`}>
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/images/hero-bg.webp"
+          fetchPriority="high"
+        />
+      </head>
       <body className="antialiased bg-gray-50 text-gray-900 font-sans">
         {children}
       </body>
