@@ -5,19 +5,28 @@ import { ArrowDown } from 'lucide-react';
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background WebM Video */}
+      {/* Background Video with optimized loading for LCP */}
       <div className="absolute inset-0 z-0">
+        {/* Static background image loads first for better LCP */}
+        <div 
+          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: 'url(/images/hero-bg.jpg)' }}
+        />
+        
+        {/* Video loads after with preload="none" for performance */}
         <video
           autoPlay
           loop
           muted
           playsInline
+          preload="none"
           className="w-full h-full object-cover"
           poster="/images/hero-bg.jpg"
         >
           <source src="/images/hero-bg.webm" type="video/webm" />
           Your browser does not support the video tag.
         </video>
+        
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-black/40" />
       </div>

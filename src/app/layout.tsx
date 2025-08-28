@@ -43,18 +43,112 @@ const futura = localFont({
 export const metadata: Metadata = {
   title: "PROLASER CLEAN DXB - Laser Cleaning Services",
   description: "Revolutionizing Surface Cleaning with Laser Technology. Eco-friendly, precise, and efficient laser cleaning services in Dubai, UAE.",
-  keywords: "laser cleaning, Dubai, surface cleaning, eco-friendly, industrial cleaning, residential cleaning, HoReCa cleaning",
+  keywords: "laser cleaning, Dubai, surface cleaning, eco-friendly, industrial cleaning, residential cleaning, HoReCa cleaning, UAE, manufacturing, aerospace, automotive",
   authors: [{ name: "PROLASER CLEAN DXB" }],
   creator: "PROLASER CLEAN DXB",
   publisher: "PROLASER CLEAN DXB",
+  category: "Industrial Services",
+  classification: "Business",
+  icons: {
+    icon: "/images/logo.jpeg",
+    shortcut: "/images/logo.jpeg",
+    apple: "/images/logo.jpeg",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
-    title: "PROLASER CLEAN DXB - Laser Cleaning Services",
-    description: "Revolutionizing Surface Cleaning with Laser Technology",
+    title: "PROLASER CLEAN DXB - Advanced Laser Cleaning Services in Dubai",
+    description: "Professional laser cleaning services in Dubai, UAE. Eco-friendly, chemical-free surface cleaning for manufacturing, aerospace, automotive, HoReCa, and residential applications.",
     url: "https://prolaserdxb.com",
     siteName: "PROLASER CLEAN DXB",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/images/logo.jpeg",
+        width: 200,
+        height: 200,
+        alt: "PROLASER CLEAN DXB - Laser Cleaning Services Logo",
+      },
+      {
+        url: "/images/hero-bg.jpg",
+        width: 1200,
+        height: 630,
+        alt: "PROLASER CLEAN DXB - Advanced Laser Cleaning Technology",
+      },
+    ],
+    emails: ["contact@prolaserdxb.com"],
+    phoneNumbers: ["+971582751122", "+971581085800"],
+    countryName: "United Arab Emirates",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "PROLASER CLEAN DXB - Laser Cleaning Services",
+    description: "Eco-friendly laser cleaning services in Dubai. Chemical-free, precise surface cleaning for all industries.",
+    images: ["/images/hero-bg.jpg"],
+    creator: "@prolaserdxb",
+    site: "@prolaserdxb",
+  },
+  other: {
+    // WhatsApp specific metadata
+    "whatsapp:title": "PROLASER CLEAN DXB - Laser Cleaning Services",
+    "whatsapp:description": "🔥 Advanced Laser Cleaning in Dubai! Eco-friendly, chemical-free surface cleaning for all industries. Get your FREE quote today! 📞 +971 58 275 1122",
+    "whatsapp:image": "https://prolaserdxb.com/images/hero-bg.jpg",
+    "whatsapp:url": "https://prolaserdxb.com",
+    
+    // Telegram specific metadata
+    "telegram:title": "PROLASER CLEAN DXB - Revolutionary Laser Cleaning",
+    "telegram:description": "🚀 Revolutionizing Surface Cleaning with Laser Technology in Dubai, UAE\n\n✅ Eco-friendly & Chemical-free\n✅ Manufacturing, Aerospace, Automotive\n✅ HoReCa & Residential Services\n\n📞 Contact: +971 58 275 1122\n📧 contact@prolaserdxb.com",
+    "telegram:image": "https://prolaserdxb.com/images/hero-bg.jpg",
+    "telegram:channel": "@prolaserdxb",
+    
+    // Generic messaging apps fallback
+    "mobile-web:app-title": "PROLASER CLEAN DXB",
+    "mobile-web:app-description": "Professional laser cleaning services in Dubai. Eco-friendly, precise, efficient.",
+    "mobile-web:app-image": "https://prolaserdxb.com/images/logo.jpeg",
+    
+    // Additional rich snippet data
+    "business:contact_data:phone_number": "+971582751122",
+    "business:contact_data:email": "contact@prolaserdxb.com",
+    "business:contact_data:website": "https://prolaserdxb.com",
+    "business:contact_data:country_name": "United Arab Emirates",
+    "business:contact_data:locality": "Dubai",
+    "business:contact_data:region": "Dubai",
+    "business:hours": "Sunday-Thursday: 8AM-6PM",
+    "business:category": "Industrial Cleaning Services",
+  },
+  alternates: {
+    canonical: "https://prolaserdxb.com",
+    languages: {
+      "en-US": "https://prolaserdxb.com",
+      "ar-AE": "https://prolaserdxb.com/ar",
+    },
+  },
+  verification: {
+    google: "google-site-verification-code-here",
+    yandex: "yandex-verification-code-here",
+    yahoo: "yahoo-site-verification-code-here",
+    other: {
+      bing: ["bing-site-verification-code-here"],
+    },
+  },
+  appLinks: {
+    web: {
+      url: "https://prolaserdxb.com",
+      should_fallback: true,
+    },
+  },
+  bookmarks: ["https://prolaserdxb.com"],
+  referrer: "origin-when-cross-origin",
 };
 
 export default function RootLayout({
