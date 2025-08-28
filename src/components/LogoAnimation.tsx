@@ -126,7 +126,7 @@ export default function LogoAnimation() {
 
   return (
     <div
-      className="fixed pointer-events-none"
+      className="fixed pointer-events-none hidden sm:block"
       style={{
         left: currentX - currentSize / 2,
         top: currentY - currentSize / 2,

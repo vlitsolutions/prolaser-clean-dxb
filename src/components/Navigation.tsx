@@ -39,12 +39,25 @@ export default function Navigation() {
         <div className="flex justify-between items-center py-4">
           {/* Logo Placeholder and Text */}
           <div className="flex items-center space-x-3">
-            {/* Logo Placeholder - invisible but reserves space */}
-            <div className="relative w-[60px] h-[60px]" id="nav-logo-target">
+            {/* Logo Placeholder - hidden on mobile, shown on larger screens */}
+            <div className="relative w-[60px] h-[60px] hidden sm:block" id="nav-logo-target">
               {/* The LogoAnimation component will position itself here when scrolled */}
             </div>
             
-            {/* Company Text - Shows when scrolled */}
+            {/* Company Text for Mobile - Always visible on mobile */}
+            <div className="block sm:hidden">
+              <h1 className={cn(
+                "text-lg font-bold transition-colors",
+                isScrolled ? "text-gray-900" : "text-white"
+              )}>
+                PROLASER CLEAN
+              </h1>
+              <p className="text-xs text-primary-600">
+                DXB
+              </p>
+            </div>
+            
+            {/* Company Text for Desktop - Shows when scrolled */}
             <div className={cn(
               "hidden sm:block transition-all duration-500",
               isScrolled 

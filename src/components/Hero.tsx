@@ -27,8 +27,8 @@ export default function Hero() {
 
       {/* Centered Content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-        {/* Logo - Centered at top */}
-        <div className="mb-8">
+        {/* Logo - Hidden on mobile, shown on larger screens */}
+        <div className="mb-8 hidden sm:block">
           <div className="relative w-[140px] h-[140px] sm:w-[180px] sm:h-[180px] lg:w-[200px] lg:h-[200px] mx-auto">
             {/* The LogoAnimation component will position itself here */}
             <div className="absolute inset-0" id="hero-logo-target" />
