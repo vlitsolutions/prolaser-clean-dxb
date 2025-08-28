@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+/* Custom styles for hero section */
+.hero-bg {
+  background-image: url('/images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom blue primary colors */
+:root {
+  --primary-600: #0066CC;
+  --primary-700: #0052A3;
+}
+
+/* Font variables - Spinnaker for headings, Futura Light for body text */
+:root {
+  --font_0: normal normal normal 40px / 1.4em var(--font-spinnaker), sans-serif;
+  --font_1: normal normal 300 18px / 1.4em var(--font-futura), sans-serif;
+  --font_2: normal normal normal 66px / 1.4em var(--font-spinnaker), sans-serif;
+  --font_3: normal normal normal 55px / 1.4em var(--font-spinnaker), sans-serif;
+  --font_4: normal normal normal 35px / 1.4em var(--font-spinnaker), sans-serif;
+  --font_5: normal normal normal 28px / 1.4em var(--font-spinnaker), sans-serif;
+  --font_6: normal normal normal 22px / 1.4em var(--font-spinnaker), sans-serif;
+  --font_7: normal normal 500 18px / 1.4em var(--font-futura), sans-serif;
+  --font_8: normal normal 300 18px / 1.4em var(--font-futura), sans-serif;
+  --font_9: normal normal 300 15px / 1.4em var(--font-futura), sans-serif;
+  --font_10: normal normal 300 14px / 1.4em var(--font-futura), sans-serif;
+}
+
+/* Responsive font sizes */
+@media (max-width: 768px) {
+  :root {
+    --font_2: normal normal normal 42px / 1.4em var(--font-spinnaker), sans-serif;
+    --font_3: normal normal normal 36px / 1.4em var(--font-spinnaker), sans-serif;
+    --font_6: normal normal normal 18px / 1.4em var(--font-spinnaker), sans-serif;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font_2: normal normal normal 36px / 1.4em var(--font-spinnaker), sans-serif;
+    --font_3: normal normal normal 28px / 1.4em var(--font-spinnaker), sans-serif;
+    --font_6: normal normal normal 16px / 1.4em var(--font-spinnaker), sans-serif;
+  }
+}
+
+/* Utility classes for each font */
+.font_0 { font: var(--font_0); }
+.font_1 { font: var(--font_1); }
+.font_2 { font: var(--font_2); }
+.font_3 { font: var(--font_3); }
+.font_4 { font: var(--font_4); }
+.font_5 { font: var(--font_5); }
+.font_6 { font: var(--font_6); }
+.font_7 { font: var(--font_7); }
+.font_8 { font: var(--font_8); }
+.font_9 { font: var(--font_9); }
+.font_10 { font: var(--font_10); }
+
+/* Text shadow utility similar to their styling */
+.text-shadow-lg {
+  text-shadow: rgba(0, 0, 0, 0.298039) 0px 5px 0px;
+}
+
+/* Logo animation transitions */
+.logo-transition {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ensure smooth animations */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-smooth {
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
