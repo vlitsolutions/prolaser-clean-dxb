@@ -41,6 +41,7 @@ const futura = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://prolaserdxb.com'),
   title: "PROLASER CLEAN DXB - Laser Cleaning Services",
   description: "Revolutionizing Surface Cleaning with Laser Technology. Eco-friendly, precise, and efficient laser cleaning services in Dubai, UAE.",
   keywords: "laser cleaning, Dubai, surface cleaning, eco-friendly, industrial cleaning, residential cleaning, HoReCa cleaning, UAE, manufacturing, aerospace, automotive",
