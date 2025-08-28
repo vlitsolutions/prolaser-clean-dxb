@@ -10,9 +10,17 @@ export default function LogoAnimation() {
     nav: { x: 0, y: 0 } 
   });
   const [isReady, setIsReady] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
+
+  // Handle mounting state
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   // Calculate positions of hero and nav targets using IDs
   useEffect(() => {
+    if (!hasMounted) return;
+
     const calculatePositions = () => {
       const heroTarget = document.getElementById('hero-logo-target');
       const navTarget = document.getElementById('nav-logo-target');
@@ -45,10 +53,12 @@ export default function LogoAnimation() {
       clearTimeout(timer);
       window.removeEventListener('resize', calculatePositions);
     };
-  }, []);
+  }, [hasMounted]);
 
   // Handle scroll animation
   useEffect(() => {
+    if (!hasMounted) return;
+
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const maxScroll = 500; // Extended to 500px for smoother animation
@@ -59,7 +69,7 @@ export default function LogoAnimation() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll(); // Initial call
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [hasMounted]);
 
   // Calculate current position and size based on scroll
   const interpolate = (start: number, end: number, progress: number) => {
@@ -75,17 +85,18 @@ export default function LogoAnimation() {
     return 1 - Math.pow(1 - t, 5);
   };
   
-  // Don't render on server side
-  if (typeof window === 'undefined') return null;
+  // Don't render until component has mounted to avoid hydration mismatch
+  if (!hasMounted) return null;
   
-  if (!isReady) return null; // Don't render until positions are calculated
+  // Don't render until positions are calculated to avoid glitch
+  if (!isReady) return null;
 
   // Use different easing for position vs size for better pathing
   const positionProgress = easeOutQuint(scrollProgress); // Smooth deceleration for movement
   const sizeProgress = easeInOutQuart(scrollProgress); // More controlled sizing
   
   // Calculate current scroll for positioning
-  const currentScrollY = typeof window !== 'undefined' ? window.scrollY : 0;
+  const currentScrollY = window.scrollY;
   
   // Improved pathing with bezier-like curve for more natural movement
   const startY = positions.hero.y - currentScrollY;
