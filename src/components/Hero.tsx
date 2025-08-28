@@ -27,19 +27,20 @@ export default function Hero() {
 
       {/* Centered Content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-        {/* Logo - Hidden on mobile, shown on larger screens */}
-        <div className="mb-8 hidden sm:block">
-          <div className="relative w-[140px] h-[140px] sm:w-[180px] sm:h-[180px] lg:w-[200px] lg:h-[200px] mx-auto">
-            {/* The LogoAnimation component will position itself here */}
-            <div className="absolute inset-0" id="hero-logo-target" />
+        {/* Logo Text - Will animate to navbar on scroll */}
+        <div className="mb-8 text-center">
+          <div id="hero-text-target" className="relative">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white text-shadow-lg mb-2">
+              PROLASER CLEAN
+            </h1>
+            <p className="text-2xl sm:text-3xl lg:text-4xl font-light text-primary-400 text-shadow-lg">
+              DXB
+            </p>
           </div>
         </div>
         
-        {/* Title and Subtitle - Stacked and Centered */}
+        {/* Subtitle */}
         <div className="mb-12">
-          <h1 className="font_2 text-white text-shadow-lg mb-3 px-2">
-            PROLASER CLEAN
-          </h1>
           <h2 className="font_6 text-white text-shadow-lg max-w-4xl mx-auto leading-relaxed px-2">
             Revolutionizing Surface Cleaning with 
             <span className="text-primary-400"> Laser Technology</span>

@@ -37,37 +37,29 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          {/* Logo Placeholder and Text */}
+          {/* Logo and Text Animation Target */}
           <div className="flex items-center space-x-3">
-            {/* Logo Placeholder - hidden on mobile, shown on larger screens */}
-            <div className="relative w-[60px] h-[60px] hidden sm:block" id="nav-logo-target">
-              {/* The LogoAnimation component will position itself here when scrolled */}
-            </div>
-            
-            {/* Company Text for Mobile - Always visible on mobile */}
-            <div className="block sm:hidden">
-              <h1 className={cn(
-                "text-lg font-bold transition-colors",
-                isScrolled ? "text-gray-900" : "text-white"
-              )}>
-                PROLASER CLEAN
-              </h1>
-              <p className="text-xs text-primary-600">
-                DXB
-              </p>
-            </div>
-            
-            {/* Company Text for Desktop - Shows when scrolled */}
+            {/* Static Logo - only visible when scrolled */}
             <div className={cn(
-              "hidden sm:block transition-all duration-500",
-              isScrolled 
-                ? "opacity-100 translate-x-0" 
-                : "opacity-0 -translate-x-4"
+              "relative w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] transition-opacity duration-500",
+              isScrolled ? "opacity-100" : "opacity-0"
             )}>
-              <h1 className="text-xl font-bold text-gray-900">
+              <img 
+                src="/images/logo.webp" 
+                alt="PROLASER CLEAN DXB Logo" 
+                className="w-full h-full object-cover shadow-lg rounded"
+              />
+            </div>
+            
+            {/* Text Animation Target - invisible placeholder that reserves space */}
+            <div 
+              id="nav-text-target" 
+              className="relative opacity-0"
+            >
+              <h1 className="text-lg sm:text-xl font-bold text-gray-900 whitespace-nowrap">
                 PROLASER CLEAN
               </h1>
-              <p className="text-sm text-primary-600">
+              <p className="text-xs sm:text-sm text-primary-600">
                 DXB
               </p>
             </div>

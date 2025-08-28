@@ -1,6 +1,6 @@
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
-import LogoAnimation from '@/components/LogoAnimation';
+import TextAnimation from '@/components/TextAnimation';
 import IntroSection from '@/components/IntroSection';
 import HowItWorks from '@/components/HowItWorks';
 import Benefits from '@/components/Benefits';
@@ -12,7 +12,7 @@ import Footer from '@/components/Footer';
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <LogoAnimation />
+      <TextAnimation />
       <Navigation />
       <Hero />
       <IntroSection />
