@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 export default function LogoAnimation() {
@@ -66,11 +66,7 @@ export default function LogoAnimation() {
     return start + (end - start) * progress;
   };
 
-  // Multiple smooth easing functions for natural movement
-  const easeOutExpo = (t: number) => {
-    return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
-  };
-
+  // Smooth easing functions for natural movement
   const easeInOutQuart = (t: number) => {
     return t < 0.5 ? 8 * t * t * t * t : 1 - Math.pow(-2 * t + 2, 4) / 2;
   };

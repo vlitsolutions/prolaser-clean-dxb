@@ -43,7 +43,7 @@ export default function ContactForm() {
           Get Your Free Quote
         </h3>
         <p className="font_8 text-gray-600">
-          Tell us about your project and we'll provide a customized solution for your cleaning needs.
+          Tell us about your project and we&apos;ll provide a customized solution for your cleaning needs.
         </p>
       </div>
 
