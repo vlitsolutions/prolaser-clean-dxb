@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 export default function CaseStudies() {
@@ -33,6 +34,51 @@ export default function CaseStudies() {
       result: "The laser removes residue without abrasive tools, protecting the surface of the tiles from scratches or wear.",
       beforeImage: "/images/examples/ceramic-tiles-before.webp",
       afterImage: "/images/examples/ceramic-tiles-after.webp"
+    },
+    {
+      id: 4,
+      title: "Limestone (building facades, monuments, floors)",
+      challenge: "Limestone is soft and porous, easily damaged by abrasive cleaning or chemicals. Needs careful soot, pollution, and biological growth removal without eroding details.",
+      solution: "Applied controlled laser parameters with gradual passes to lift surface contaminants while protecting the substrate.",
+      result: "Surface soils and soot removed while preserving stone color, carvings, and tool marks. No chemical residues, minimal dust, and improved longevity of the stone surface.",
+      beforeImage: "/images/examples/limestone-before.webp",
+      afterImage: "/images/examples/limestone-after.webp"
+    },
+    {
+      id: 5,
+      title: "Bakery Tray (metal baking trays with carbonized residues/oils)",
+      challenge: "Carbonized dough, grease, and burnt-on food residues stick firmly to trays. Abrasives can thin the tray, chemicals risk contamination.",
+      solution: "Used laser cleaning to break down and remove surface build-up without abrasive media or chemicals.",
+      result: "Trays are restored to clean metal, free of residues, without wear or deformation. Hygiene improves, trays last longer, and cleaning downtime is reduced compared to caustic soaking.",
+      beforeImage: "/images/examples/bakery-tray-before.webp",
+      afterImage: "/images/examples/bakery-tray-after.webp"
+    },
+    {
+      id: 6,
+      title: "Bakery Production Line (conveyors, stainless steel, machinery parts)",
+      challenge: "Oils, flour dust, and baked residues accumulate on belts, rollers, and stainless-steel surfaces. Traditional cleaning (water, chemicals) risks contamination and requires downtime.",
+      solution: "Deployed non-contact laser cleaning to safely remove contaminants in sensitive food production environments.",
+      result: "Equipment surfaces are sanitized and residue-free without chemicals. Reduced downtime, improved food safety compliance, and longer equipment life. Production can restart quickly after cleaning.",
+      beforeImage: "/images/examples/bakery-production-before.webp",
+      afterImage: "/images/examples/bakery-production-after.webp"
+    },
+    {
+      id: 7,
+      title: "Travertine with Epoxy Coat (epoxy removal)",
+      challenge: "Epoxy coatings penetrate the porous structure of travertine. Mechanical removal risks gouging the soft stone, and chemical strippers can stain or weaken it. The goal is to strip epoxy without harming the stone surface.",
+      solution: "Used laser cleaning to selectively ablate the epoxy layer while minimizing impact on the natural stone.",
+      result: "Epoxy layer removed cleanly, travertine pores reopened, and the natural texture preserved. No chemical residues left behind, and the stone remains ready for restoration or re-coating.",
+      beforeImage: "/images/examples/travertine-epoxy-before.webp",
+      afterImage: "/images/examples/travertine-epoxy-after.webp"
+    },
+    {
+      id: 8,
+      title: "Metal Car Parts (engine, chassis, body components)",
+      challenge: "Rust, grease, paint, and oxide layers reduce part performance and complicate repairs or recoating.",
+      solution: "Applied laser cleaning to precisely remove unwanted layers without damaging the base metal or altering dimensions.",
+      result: "Clean, rust-free surfaces that are ready for welding, coating, or assembly; improved durability and reliability of parts.",
+      beforeImage: "/images/examples/metal-car-parts-new-before.webp",
+      afterImage: "/images/examples/metal-car-parts-new-after.webp"
     }
   ];
 
@@ -136,56 +182,135 @@ export default function CaseStudies() {
   return (
     <section id="case-studies" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="font_3 text-gray-900 mb-6">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.h2 
+            className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             Case Studies & Success Stories
-          </h2>
-          <div className="w-24 h-1 bg-primary-600 mx-auto mb-8"></div>
-          <p className="font_8 text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          </motion.h2>
+          <motion.div 
+            className="w-24 h-1 bg-primary-600 mx-auto mb-8"
+            initial={{ width: 0 }}
+            whileInView={{ width: 96 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          ></motion.div>
+          <motion.p 
+            className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
             See the remarkable transformation results achieved with our laser cleaning technology across different applications.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         <div className="space-y-16">
           {caseStudies.map((study, index) => (
-            <div key={study.id} className="grid lg:grid-cols-2 gap-8 items-center">
-              <div className={`${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
+            <motion.div 
+              key={study.id} 
+              className="grid lg:grid-cols-2 gap-8 items-center"
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ 
+                duration: 0.8, 
+                delay: index * 0.3,
+                ease: "easeOut"
+              }}
+            >
+              <motion.div 
+                className={`${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ 
+                  duration: 0.8, 
+                  delay: index * 0.3 + 0.3,
+                  ease: "easeOut"
+                }}
+              >
                 <BeforeAfterSlider 
                   beforeImage={study.beforeImage}
                   afterImage={study.afterImage}
                   caseId={study.id}
                 />
-              </div>
+              </motion.div>
               
-              <div className={`${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
-                <h3 className="font_5 text-gray-900 mb-6">
+              <motion.div 
+                className={`${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}
+                initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ 
+                  duration: 0.8, 
+                  delay: index * 0.3 + 0.5,
+                  ease: "easeOut"
+                }}
+              >
+                <h3 className="text-2xl font-semibold text-gray-900 mb-6">
                   Example {study.id}: {study.title}
                 </h3>
                 
                 <div className="space-y-4">
-                  <div>
-                    <h4 className="font_7 text-red-700 mb-2">Challenge:</h4>
-                    <p className="font_8 text-gray-600 leading-relaxed">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ 
+                      duration: 0.6, 
+                      delay: index * 0.3 + 0.7 
+                    }}
+                  >
+                    <h4 className="text-lg font-medium text-red-700 mb-2">Challenge:</h4>
+                    <p className="text-lg text-gray-600 leading-relaxed">
                       {study.challenge}
                     </p>
-                  </div>
+                  </motion.div>
                   
-                  <div>
-                    <h4 className="font_7 text-blue-700 mb-2">Solution:</h4>
-                    <p className="font_8 text-gray-600 leading-relaxed">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ 
+                      duration: 0.6, 
+                      delay: index * 0.3 + 0.9 
+                    }}
+                  >
+                    <h4 className="text-lg font-medium text-blue-700 mb-2">Solution:</h4>
+                    <p className="text-lg text-gray-600 leading-relaxed">
                       {study.solution}
                     </p>
-                  </div>
+                  </motion.div>
                   
-                  <div>
-                    <h4 className="font_7 text-green-700 mb-2">Result:</h4>
-                    <p className="font_8 text-gray-600 leading-relaxed">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ 
+                      duration: 0.6, 
+                      delay: index * 0.3 + 1.1 
+                    }}
+                  >
+                    <h4 className="text-lg font-medium text-green-700 mb-2">Result:</h4>
+                    <p className="text-lg text-gray-600 leading-relaxed">
                       {study.result}
                     </p>
-                  </div>
+                  </motion.div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           ))}
         </div>
       </div>

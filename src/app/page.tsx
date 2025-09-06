@@ -8,6 +8,7 @@ import Industries from '@/components/Industries';
 import CaseStudies from '@/components/CaseStudies';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import { StickyWhatsAppButton } from '@/components/WhatsAppButton';
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <CaseStudies />
       <Contact />
       <Footer />
+      <StickyWhatsAppButton phoneNumber="971582751122" />
     </main>
   );
 }
