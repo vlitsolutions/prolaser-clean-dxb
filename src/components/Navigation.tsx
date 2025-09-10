@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail, MapPin } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,9 +45,11 @@ export default function Navigation() {
               "relative w-[32px] h-[32px] sm:w-[40px] sm:h-[40px] lg:w-[50px] lg:h-[50px] transition-opacity duration-500 flex-shrink-0",
               isScrolled ? "opacity-100" : "opacity-0"
             )}>
-              <img 
+              <Image 
                 src="/images/logo.webp" 
                 alt="PROLASER CLEAN DXB Logo" 
+                width={50}
+                height={50}
                 className="w-full h-full object-cover shadow-lg rounded"
               />
             </div>

@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { Phone, Mail, Globe, MapPin } from 'lucide-react';
 import ContactForm from './ContactForm';
 import WhatsAppButton from './WhatsAppButton';

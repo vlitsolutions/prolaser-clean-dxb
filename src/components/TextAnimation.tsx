@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react';
 
 export default function TextAnimation() {
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [positions, setPositions] = useState({ 
-    hero: { x: 0, y: 0 }, 
-    nav: { x: 0, y: 0 } 
+  const [positions, setPositions] = useState({
+    hero: { x: 0, y: 0 },
+    nav: { x: 0, y: 0 }
   });
   const [isReady, setIsReady] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
@@ -23,11 +23,11 @@ export default function TextAnimation() {
     const calculatePositions = () => {
       const heroTarget = document.getElementById('hero-text-target');
       const navTarget = document.getElementById('nav-text-target');
-      
+
       if (heroTarget && navTarget) {
         const heroRect = heroTarget.getBoundingClientRect();
         const navRect = navTarget.getBoundingClientRect();
-        
+
         setPositions({
           hero: {
             x: heroRect.left + heroRect.width / 2,
@@ -47,7 +47,7 @@ export default function TextAnimation() {
       calculatePositions();
       window.addEventListener('resize', calculatePositions);
     }, 100);
-    
+
     return () => {
       clearTimeout(timer);
       window.removeEventListener('resize', calculatePositions);
@@ -63,7 +63,7 @@ export default function TextAnimation() {
       const maxScroll = 500;
       const progress = Math.min(scrollY / maxScroll, 1);
       setScrollProgress(progress);
-      
+
       // Fade out original hero text almost instantly when scrolling starts
       const heroTarget = document.getElementById('hero-text-target');
       if (heroTarget) {
@@ -87,35 +87,31 @@ export default function TextAnimation() {
     return 1 - Math.pow(1 - t, 5);
   };
 
-  const easeInOutQuart = (t: number) => {
-    return t < 0.5 ? 8 * t * t * t * t : 1 - Math.pow(-2 * t + 2, 4) / 2;
-  };
-  
+
   // Don't render until component has mounted to avoid hydration mismatch
   if (!hasMounted) return null;
-  
+
   // Don't render until positions are calculated to avoid glitch
   if (!isReady) return null;
-  
+
   // Don't render if there's no scroll progress (text should only show when animating)
   if (scrollProgress === 0) return null;
 
   const positionProgress = easeOutQuint(scrollProgress);
-  const sizeProgress = easeInOutQuart(scrollProgress);
-  
+
   // Calculate current scroll for positioning
   const currentScrollY = window.scrollY;
-  
+
   // Calculate path
   const startY = positions.hero.y - currentScrollY;
   const endY = positions.nav.y;
   const startX = positions.hero.x;
   const endX = positions.nav.x;
-  
+
   // Add slight arc to the movement path
   const midY = startY + (endY - startY) * 0.3 - 20;
   const midX = startX + (endX - startX) * 0.7;
-  
+
   // Bezier-like interpolation for curved path
   let currentX, currentY;
   if (positionProgress < 0.5) {
@@ -127,7 +123,7 @@ export default function TextAnimation() {
     currentX = interpolate(midX, endX, t);
     currentY = interpolate(midY, endY, t);
   }
-  
+
   // Calculate text sizes for responsive animation - much faster size reduction
   const quickSizeProgress = Math.min(scrollProgress * 5, 1); // Size reduces 5x faster
   const titleSizeDesktop = interpolate(56, 20, quickSizeProgress); // 3.5rem to 1.25rem
@@ -147,7 +143,7 @@ export default function TextAnimation() {
       }}
     >
       <div className="text-center">
-        <h1 
+        <h1
           className="font-bold transition-all duration-75 ease-out mb-1"
           style={{
             fontSize: `${titleSizeMobile}px`,
@@ -163,7 +159,7 @@ export default function TextAnimation() {
             PROLASER CLEAN
           </span>
         </h1>
-        <p 
+        <p
           className="font-light transition-all duration-75 ease-out text-left"
           style={{
             fontSize: `${subtitleSizeMobile}px`,
