@@ -56,15 +56,15 @@ function validateFormData(data: Record<string, unknown>): ContactFormData {
   }
 
   return {
-    name: data.name.trim(),
-    email: data.email.trim(),
-    phone: data.phone?.trim() || undefined,
-    company: data.company?.trim() || undefined,
-    location: data.location?.trim() || undefined,
-    serviceType: data.serviceType.trim(),
-    projectDetails: data.projectDetails?.trim() || undefined,
-    message: data.message?.trim() || undefined,
-    captcha: data.captcha
+    name: (data.name as string).trim(),
+    email: (data.email as string).trim(),
+    phone: data.phone ? (data.phone as string).trim() || undefined : undefined,
+    company: data.company ? (data.company as string).trim() || undefined : undefined,
+    location: data.location ? (data.location as string).trim() || undefined : undefined,
+    serviceType: (data.serviceType as string).trim(),
+    projectDetails: data.projectDetails ? (data.projectDetails as string).trim() || undefined : undefined,
+    message: data.message ? (data.message as string).trim() || undefined : undefined,
+    captcha: data.captcha as string | undefined
   };
 }
 
